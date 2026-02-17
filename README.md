@@ -15,8 +15,6 @@ The system lives in two separate parts:
 
 > The two parts are **independent by design**: Onboard system handles everything **time-critical**. Cloud handles everything **cognitive**.
 
-<br>
-
 <div align="center">
 
 # ✈️ Part 1: Autonomous VTOL System 
@@ -51,8 +49,6 @@ The onboard system is structured into three distinct layers, each with a clear r
 - **SITL Simulation (Linux)** → Software-in-the-loop testing before hardware deployment 
 - **Pre-Arm Checks** → Validates sensor health and system readiness before flight 
 - **Geofence Failsafe** → Enforces geographic boundaries and triggers RTL on breach 
-
-<br>
 
 <div align="center">
   
