@@ -204,12 +204,16 @@ cdk deploy
 - [ ] End-to-end integration test (SITL → Cloud → ACK loop)
 
 ## 📖 Documentation
-  
+
+<div align="center">
+
 | Document | Description |
 |---|---|
 | `docs/onboard_architecture.png` | Full onboard system flowchart |
 | `docs/cloud_architecture.png` | AWS cloud architecture diagram |
 | `docs/integration_guide.md` | How MAVLink telemetry flows into AWS IoT Core |
+
+</div>
 
 ## 🤝 Contributing
 
