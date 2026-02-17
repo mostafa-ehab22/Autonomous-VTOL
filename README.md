@@ -31,9 +31,9 @@ A full-stack autonomous VTOL *(Vertical Take-Off and Landing)* aircraft system c
 
 The onboard system is structured into three distinct layers, each with a clear responsibility boundary:
 ### 1️⃣ Perception Layer (AI & Vision)
-- **OpenCV** → Frame capture and preprocessing pipeline
-- **YOLO11** → Real-time object detection and classification
 - **Roboflow** → Real-world annotated dataset for model training
+- **YOLO11** → Real-time object detection and classification
+- **OpenCV** → Frame capture and preprocessing pipeline
 
 ### 2️⃣ High-Level Logic Layer (Decision Making on Raspberry Pi)
 - **Raspberry Pi** → Onboard compute for decision making
