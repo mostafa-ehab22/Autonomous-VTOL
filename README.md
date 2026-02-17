@@ -1,18 +1,19 @@
 ## 🎯 Project Overview
-![Python](https://img.shields.io/badge/Python-3776AB.svg?logo=python&logoColor=white)
-![ROS2](https://img.shields.io/badge/ROS2-22314E.svg?logo=ros&logoColor=white)
-![ArduPilot](https://img.shields.io/badge/ArduPilot-FF0000.svg?logo=ardupilot&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E.svg?logo=amazonaws&logoColor=white)
-![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-FF9900.svg?logo=amazonaws&logoColor=white)
-
 A full-stack autonomous VTOL (Vertical Take-Off and Landing) system combining **onboard embedded flight control** with a **serverless AWS cloud extension** for AI-driven mission decision making.
+The system lives in two separate parts:
+  
+<div align="center">
+  
+| | ✈️ Onboard System | 🌥️ Cloud Extension |
+|---|:---:|:---:|
+| 🔧 **What** | Embedded flight control & perception | Serverless AWS mission intelligence |
+| 🖥️ **Runs on** | Raspberry Pi + Pixhawk | AWS (eu-central-1) |
+| ⚡ **Handles** | Anything time-critical | Anything cognitive |
+| 🛠️ **Key tech** | ROS2, ArduPilot, YOLO11 | Bedrock, Step Functions, IoT Core |
 
-The system is split into two tightly integrated layers:
+</div>
 
-- **Part 1 — Onboard VTOL System:** Real-time perception, flight control, and ROS2-based decision logic running on embedded hardware (Raspberry Pi + Pixhawk).
-- **Part 2 — Cloud Extension (Cognitive Mission Control):** A serverless AWS architecture that offloads mission intelligence, state logging, pilot alerting, and AI decision making from the onboard computer to the cloud.
-
-> The onboard system handles everything **time-critical**. The cloud handles everything **cognitive**.
+> The two parts are **independent by design**: Onboard system handles everything **time-critical**. Cloud handles everything **cognitive**.
 
 <div align="center">
 
