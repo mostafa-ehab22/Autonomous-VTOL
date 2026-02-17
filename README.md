@@ -54,8 +54,6 @@ The onboard system is structured into three distinct layers, each with a clear r
 
 <br>
 
----
-
 <div align="center">
   
 # 🌥️ Part 2: Cloud Extension
