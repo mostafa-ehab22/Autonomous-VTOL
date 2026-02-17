@@ -186,8 +186,6 @@ cdk deploy
 
 ---
 
-<br>
-
 # 🗺️ Roadmap
 
 ### Onboard System
