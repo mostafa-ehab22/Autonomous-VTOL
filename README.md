@@ -24,7 +24,7 @@ The system lives in two separate parts:
 </div>
 
 <div align="center">
-  <img src="docs/onboard_architecture.jpeg" alt="Onboard Architecture" width="100%"/>
+  <img src="docs/onboard_architecture.jpeg" alt="Onboard Architecture" width="90%"/>
 </div>
 
 ## 🧱 System Architecture
@@ -59,7 +59,7 @@ The onboard system is structured into three distinct layers, each with a clear r
 # 🌥️ Part 2: Cloud Extension
 
 <div align="center">
-  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="100%"/>
+  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="90%"/>
 </div>
 
 </div>
@@ -217,7 +217,7 @@ cdk deploy
 
 ## 🤝 Contributing
 
-This is an active graduation project. Issues and suggestions are welcome — feel free to open an issue for discussion.
+This is an active graduation project. Issues and suggestions are welcome - feel free to open an issue for discussion.
 
 ---
 
