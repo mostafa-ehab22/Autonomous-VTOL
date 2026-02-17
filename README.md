@@ -60,6 +60,10 @@ The onboard system is structured into three distinct layers, each with a clear r
   
 # 🌥️ Part 2: Cloud Extension
 
+<div align="center">
+  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="100%"/>
+</div>
+
 </div>
 
 ### 🎯 Why a Cloud Extension?
@@ -80,11 +84,7 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 
 </div>
 
-> ⚠️ **Nothing safety-critical moves to the cloud.** ArduPilot, EKF3, TECS, L1, YOLO11, and all failsafes remain fully onboard.
-
-<div align="center">
-  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="100%"/>
-</div>
+> ⚠️ **Nothing safety-critical moves to the cloud.** All flight control, YOLO11 & failsafes remain fully onboard.
 
 ## 🧱 AWS Cloud Architecture
 
