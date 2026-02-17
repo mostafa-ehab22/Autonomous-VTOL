@@ -17,7 +17,7 @@ The system lives in two separate parts:
 
 <div align="center">
 
-# Part 1: Autonomous VTOL System
+# ✈️ Part 1: Autonomous VTOL System ✈️
 
 </div>
 
@@ -56,7 +56,7 @@ The onboard system is structured into three distinct layers, each with a clear r
 
 <div align="center">
   
-# Part 2: Cloud Extension (Cognitive Mission Control)
+# 🌥️ Part 2: Cloud Extension (Cognitive Mission Control) 🌥️
 
 </div>
 
