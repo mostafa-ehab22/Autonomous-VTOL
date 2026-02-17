@@ -221,8 +221,6 @@ cdk deploy
 
 This is an active graduation project. Issues and suggestions are welcome — feel free to open an issue for discussion.
 
----
-
 <div align="center">
-  <sub>Built as a graduation project at FAculty of Engineering, Alexandria University, Egypt — Autonomous VTOL × AWS Serverless</sub>
+  <sub>Built as a graduation project at Faculty of Engineering, Alexandria University, Egypt — Autonomous VTOL × AWS Serverless</sub>
 </div>
