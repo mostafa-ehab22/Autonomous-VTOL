@@ -189,11 +189,11 @@ cdk deploy
 # 🗺️ Roadmap
 
 ### Onboard System
-- [ ] YOLO11 model training on Roboflow dataset
-- [ ] ROS2 workspace setup with MAVLink bridge node
-- [ ] SITL simulation validation
-- [ ] Hardware integration on Pixhawk + Raspberry Pi
-- [ ] Geofence and failsafe parameter tuning
+- [x] YOLO11 model training on Roboflow dataset
+- [x] ROS2 workspace setup with MAVLink bridge node
+- [x] SITL simulation validation
+- [x] Hardware integration on Pixhawk + Raspberry Pi
+- [x] Geofence and failsafe parameter tuning
 
 ### Cloud Extension
 - [ ] AWS CDK infrastructure stack
@@ -202,8 +202,6 @@ cdk deploy
 - [ ] Bedrock prompt engineering for safety classification
 - [ ] IoT Core rules + Device Shadow integration
 - [ ] End-to-end integration test (SITL → Cloud → ACK loop)
-
----
 
 ## 📖 Documentation
   
@@ -216,6 +214,8 @@ cdk deploy
 ## 🤝 Contributing
 
 This is an active graduation project. Issues and suggestions are welcome — feel free to open an issue for discussion.
+
+---
 
 <div align="center">
   <sub>Built as a graduation project at Faculty of Engineering, Alexandria University, Egypt: Autonomous VTOL × AWS Serverless</sub>
