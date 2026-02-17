@@ -27,24 +27,24 @@ The system is split into two tightly integrated layers:
 ## 🧱 System Architecture
 
 The onboard system is structured into three distinct layers, each with a clear responsibility boundary:
-### 1️⃣ Perception Layer
+### 1️⃣ Perception Layer - AI & Vision
 - **OpenCV** → Frame capture and preprocessing pipeline
 - **YOLO11** → Real-time object detection and classification
 - **Roboflow** → Real-world annotated dataset for model training
 
-### 2️⃣ High-Level Logic Layer
+### 2️⃣ High-Level Logic Layer (Decision Making on Raspberry Pi)
 - **Raspberry Pi** → Onboard compute for decision making
 - **ROS2 Jazzy** → Middleware for inter-process communication
 - **Custom Packages & Nodes** → OOP-designed mission logic modules
 - **MAVLink Bridge (Serial/UDP)** → Bidirectional communication with Pixhawk
 
-### 3️⃣ Low-Level Control Layer
+### 3️⃣ Low-Level Control Layer (Flight Dynamics on Pixhawk RTOS)
 - **ArduPilot Firmware (Pixhawk)** → Flight controller running on RTOS
 - **EKF3** → Extended Kalman Filter for state estimation (position, velocity, attitude)
 - **TECS** → Total Energy Control System for speed and altitude management
 - **L1 Controller** → Lateral navigation and path following
 
-### 4️⃣ Validation & Safety
+### 4️⃣ Validation & Safety (Pre-flight & In-flight Guardrails)
 - **SITL Simulation (Linux)** → Software-in-the-loop testing before hardware deployment 
 - **Pre-Arm Checks** → Validates sensor health and system readiness before flight 
 - **Geofence Failsafe** → Enforces geographic boundaries and triggers RTL on breach 
