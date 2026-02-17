@@ -60,7 +60,7 @@ The onboard system is structured into three distinct layers, each with a clear r
 
 </div>
 
-### 🎯 Why a Cloud Extension?
+## 🎯 Why a Cloud Extension?
 
 The Raspberry Pi was originally responsible for mission logic, state management, data logging, AND running ROS2 + YOLO11 simultaneously — a heavy compute burden for in-flight hardware.
 
