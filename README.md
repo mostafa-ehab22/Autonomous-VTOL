@@ -1,6 +1,5 @@
 ## 🎯 Project Overview
-A full-stack autonomous VTOL (Vertical Take-Off and Landing) system combining **onboard embedded flight control** with a **serverless AWS cloud extension** for AI-driven mission decision making.
-The system lives in two separate parts:
+A full-stack autonomous VTOL *(Vertical Take-Off and Landing)* aircraft system combining **onboard embedded flight control** with a **stateless, event-driven AWS cloud extension** for AI-driven mission decision making, designed to scale from one drone to a **fleet of thousands** with **ZERO** architectural changes. The system lives in two separate parts:
   
 <div align="center">
   
@@ -13,7 +12,8 @@ The system lives in two separate parts:
 
 </div>
 
-> The two parts are **independent by design**: Onboard system handles everything **time-critical**. Cloud handles everything **cognitive**.
+> The two parts are **independent by design**: Onboard system handles everything **time-critical**. Cloud handles everything **cognitive**. <br>
+> Enabling the architecture to support horizontal scaling with no code modifications, limited only by AWS service quotas.
 
 <div align="center">
 
@@ -62,9 +62,10 @@ The onboard system is structured into three distinct layers, each with a clear r
 
 ## 🎯 Why a Cloud Extension?
 
-The Raspberry Pi was originally responsible for mission logic, state management, data logging, AND running ROS2 + YOLO11 simultaneously — a heavy compute burden for in-flight hardware.
+The Raspberry Pi was originally responsible for mission logic, state management, data logging, AND running ROS2 + YOLO11 simultaneously - a heavy compute burden for in-flight hardware.
 
-The cloud extension offloads cognitive and non-time-critical responsibilities to AWS, leaving the Pi focused solely on ROS2 coordination and real-time inference.
+- **The Pi now only handles:** ROS2 coordination + real-time inference
+- **The cloud now handles:** Everything cognitive and non-time-critical responsibilities
 
 <div align="center">
 
@@ -75,6 +76,19 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 | 🔔 Pilot notifications | Ground Control Station only | **SNS (Mobile/Email)** |
 | 🔄 Mission state management | In-memory / local | **Device Shadow (with offline sync)** |
 | 📨 Message reliability | None | **SQS + Dead Letter Queue** |
+
+</div>
+
+Beyond a single aircraft, the architecture scales horizontally with **ZERO CHANGES** - every service is built to handle a fleet out of the box:
+
+<div align="center">
+
+| Service | Why It Scales |
+|---|:---:|
+| 🧠 Bedrock Decision Engine | Processes any number of concurrent mission decisions |
+| ⚙️ Step Functions Workflow | Each VTOL runs its own independent execution |
+| 📡 IoT Core Pipeline | Built for millions of connected devices |
+| 🪞 Device Shadow | One isolated shadow per aircraft |
 
 </div>
 
