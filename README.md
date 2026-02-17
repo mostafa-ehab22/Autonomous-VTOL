@@ -24,7 +24,7 @@ The system lives in two separate parts:
 </div>
 
 <div align="center">
-  <img src="docs/onboard_architecture.jpeg" alt="Onboard Architecture" width="70%"/>
+  <img src="docs/onboard_architecture.jpeg" alt="Onboard Architecture" width="100%"/>
 </div>
 
 ## 🧱 System Architecture
@@ -71,7 +71,7 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 <div align="center">
 
 | Responsibility | Before (Pi Only) | After (Cloud Extension) |
-|---|---|---|
+|---|:---:|:---:|
 | 🧠 Mission decision making | Python scripts on Pi | **AWS Bedrock (AI)** |
 | 📋 State & mission logging | Local files / SQLite | **DynamoDB** |
 | 🔔 Pilot notifications | Ground Control Station only | **SNS (Mobile/Email)** |
@@ -82,13 +82,11 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 
 > ⚠️ **Nothing safety-critical moves to the cloud.** ArduPilot, EKF3, TECS, L1, YOLO11, and all failsafes remain fully onboard.
 
-## 🧱 Cloud Architecture
-
 <div align="center">
-  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="70%"/>
+  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="100%"/>
 </div>
 
-## ⚙️ AWS Services Used
+## 🧱 AWS Cloud Architecture
 
 ### Core Pipeline
 - **AWS IoT Core** → MQTT ingestion point, Device Shadow for offline sync
