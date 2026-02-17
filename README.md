@@ -30,7 +30,7 @@ The system lives in two separate parts:
 ## 🧱 System Architecture
 
 The onboard system is structured into three distinct layers, each with a clear responsibility boundary:
-### 1️⃣ Perception Layer - AI & Vision
+### 1️⃣ Perception Layer (AI & Vision)
 - **OpenCV** → Frame capture and preprocessing pipeline
 - **YOLO11** → Real-time object detection and classification
 - **Roboflow** → Real-world annotated dataset for model training
@@ -72,11 +72,11 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 
 | Responsibility | Before (Pi Only) | After (Cloud Extension) |
 |---|---|---|
-| Mission decision making | Python scripts on Pi | **AWS Bedrock (AI)** |
-| State & mission logging | Local files / SQLite | **DynamoDB** |
-| Pilot notifications | Ground Control Station only | **SNS (Mobile/Email)** |
-| Mission state management | In-memory / local | **Device Shadow (with offline sync)** |
-| Message reliability | None | **SQS + Dead Letter Queue** |
+| 🧠 Mission decision making | Python scripts on Pi | **AWS Bedrock (AI)** |
+| 📋 State & mission logging | Local files / SQLite | **DynamoDB** |
+| 🔔 Pilot notifications | Ground Control Station only | **SNS (Mobile/Email)** |
+| 🔄 Mission state management | In-memory / local | **Device Shadow (with offline sync)** |
+| 📨 Message reliability | None | **SQS + Dead Letter Queue** |
 
 </div>
 
