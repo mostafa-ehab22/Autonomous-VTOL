@@ -45,9 +45,6 @@ The onboard system is structured into three distinct layers, each with a clear r
 - **L1 Controller** → Lateral navigation and path following
 
 ### 4️⃣ Validation & Safety
-
-<div align="center">
-  
 - **SITL Simulation (Linux)** → Software-in-the-loop testing before hardware deployment 
 - **Pre-Arm Checks** → Validates sensor health and system readiness before flight 
 - **Geofence Failsafe** → Enforces geographic boundaries and triggers RTL on breach 
@@ -56,6 +53,8 @@ The onboard system is structured into three distinct layers, each with a clear r
 
 ---
 
+<div align="center">
+  
 # Part 2: Cloud Extension (Cognitive Mission Control)
 
 </div>
