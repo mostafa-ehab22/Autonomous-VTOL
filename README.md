@@ -12,7 +12,9 @@ A full-stack autonomous VTOL *(Vertical Take-Off and Landing)* aircraft system c
 
 </div>
 
-> The two parts are **independent by design**: Onboard system handles everything **time-critical**. Cloud handles everything **cognitive**. <br>
+> The two parts are **independent by design**:
+> Onboard system handles everything **time-critical**.
+> Cloud handles everything **cognitive**. <br>
 > Enabling the architecture to support horizontal scaling with no code modifications, limited only by AWS service quotas.
 
 <div align="center">
