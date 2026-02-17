@@ -1,16 +1,9 @@
-<h1 align="center">Cognitive Mission Control for Autonomous VTOL</h1>
-
-<div>
-
+## 🎯 Project Overview
 ![Python](https://img.shields.io/badge/Python-3776AB.svg?logo=python&logoColor=white)
 ![ROS2](https://img.shields.io/badge/ROS2-22314E.svg?logo=ros&logoColor=white)
 ![ArduPilot](https://img.shields.io/badge/ArduPilot-FF0000.svg?logo=ardupilot&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E.svg?logo=amazonaws&logoColor=white)
 ![Amazon Bedrock](https://img.shields.io/badge/Amazon%20Bedrock-FF9900.svg?logo=amazonaws&logoColor=white)
-
-</div>
-
-## 🎯 Project Overview
 
 A full-stack autonomous VTOL (Vertical Take-Off and Landing) system combining **onboard embedded flight control** with a **serverless AWS cloud extension** for AI-driven mission decision making.
 
@@ -21,34 +14,31 @@ The system is split into two tightly integrated layers:
 
 > The onboard system handles everything **time-critical**. The cloud handles everything **cognitive**.
 
----
+<div align="center">
 
-<br>
+# Part 1: Autonomous VTOL System
 
-# Part 1 — Autonomous VTOL System
-
-## 🧱 System Architecture
-
-The onboard system is structured into three distinct layers, each with a clear responsibility boundary:
+</div>
 
 <div align="center">
   <img src="docs/onboard_architecture.jpeg" alt="Onboard Architecture" width="70%"/>
 </div>
 
-## ⚙️ Tech Stack
+## 🧱 System Architecture
 
-### Perception Layer
+The onboard system is structured into three distinct layers, each with a clear responsibility boundary:
+### 1️⃣ Perception Layer
 - **OpenCV** → Frame capture and preprocessing pipeline
 - **YOLO11** → Real-time object detection and classification
 - **Roboflow** → Real-world annotated dataset for model training
 
-### High-Level Logic Layer
+### 2️⃣ High-Level Logic Layer
 - **Raspberry Pi** → Onboard compute for decision making
 - **ROS2 Jazzy** → Middleware for inter-process communication
 - **Custom Packages & Nodes** → OOP-designed mission logic modules
 - **MAVLink Bridge (Serial/UDP)** → Bidirectional communication with Pixhawk
 
-### Low-Level Control Layer
+### 3️⃣ Low-Level Control Layer
 - **ArduPilot Firmware (Pixhawk)** → Flight controller running on RTOS
 - **EKF3** → Extended Kalman Filter for state estimation (position, velocity, attitude)
 - **TECS** → Total Energy Control System for speed and altitude management
@@ -56,7 +46,7 @@ The onboard system is structured into three distinct layers, each with a clear r
 
 ## 🛡️ Validation & Safety
 
-<div alig="center">
+<div align="center">
   
 | Mechanism | Purpose |
 |---|---|
@@ -65,16 +55,23 @@ The onboard system is structured into three distinct layers, each with a clear r
 | **Geofence Failsafe** | Enforces geographic boundaries and triggers RTL on breach |
 
 </div>
+<div align="center">
 
 <br>
 
-# Part 2 — Cloud Extension (Cognitive Mission Control)
+---
 
-## 🎯 Why a Cloud Extension?
+# Part 2: Cloud Extension (Cognitive Mission Control)
+
+</div>
+
+### 🎯 Why a Cloud Extension?
 
 The Raspberry Pi was originally responsible for mission logic, state management, data logging, AND running ROS2 + YOLO11 simultaneously — a heavy compute burden for in-flight hardware.
 
 The cloud extension offloads cognitive and non-time-critical responsibilities to AWS, leaving the Pi focused solely on ROS2 coordination and real-time inference.
+
+<div align="center">
 
 | Responsibility | Before (Pi Only) | After (Cloud Extension) |
 |---|---|---|
@@ -84,41 +81,15 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 | Mission state management | In-memory / local | **Device Shadow (with offline sync)** |
 | Message reliability | None | **SQS + Dead Letter Queue** |
 
+</div>
+
 > ⚠️ **Nothing safety-critical moves to the cloud.** ArduPilot, EKF3, TECS, L1, YOLO11, and all failsafes remain fully onboard.
 
 ## 🧱 Cloud Architecture
 
-```
-Autonomous VTOL
-      │
-      │ MQTT (Telemetry)
-      ▼
- AWS IoT Core ──────────────────────────► Amazon S3 (Glacier Lifecycle)
-      │                                          Archive
-      │ Publish
-      ▼
- Amazon SQS (Mission Queue)
-      │ 3 Failed Tries → Dead Letter Queue (DLQ)
-      │ Trigger via EventBridge Pipes
-      ▼
- AWS Step Functions (Mission Workflow)
-      │
-      ├─► Lambda (Data Normalization)
-      ├─► Amazon Bedrock (AI Decision Making)
-      ├─► DynamoDB (Mission State Logs)
-      │
-      ▼
-  Safety Check
-      │
-      ├── SAFE ──► SNS (Log Mission Topic)
-      │            ► Mission Notifications (Mobile/Email)
-      │            ► Mission Continuation Lambda (Update Mission State)
-      │
-      └── UNSAFE ► AWS Command Lambda (Update Shadow Device)
-                   ► SNS (Log Alert Topic)
-                   ► Wait State (30s) ◄──── ACK via IoT Rule
-                   ► Verify Acknowledgment Lambda
-```
+<div align="center">
+  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="70%"/>
+</div>
 
 ## ⚙️ AWS Services Used
 
@@ -260,5 +231,5 @@ This is an active graduation project. Issues and suggestions are welcome — fee
 ---
 
 <div align="center">
-  <sub>Built as a graduation project — Autonomous VTOL × AWS Serverless</sub>
+  <sub>Built as a graduation project at FAculty of Engineering, Alexandria University, Egypt — Autonomous VTOL × AWS Serverless</sub>
 </div>
