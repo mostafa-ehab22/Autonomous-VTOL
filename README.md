@@ -52,7 +52,7 @@ The onboard system is structured into three distinct layers, each with a clear r
 
 <div align="center">
 
-# 🌥️ Part 2: Cloud Extension
+# 🌥️ Part 2: Cloud Extension Architecture
 
 <div align="center">
   <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="90%"/>
