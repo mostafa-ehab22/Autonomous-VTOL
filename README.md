@@ -109,7 +109,7 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 
 ## 🔄 Mission Workflow Detail
 
-**Safe Path:**
+**✅ Safe Path:**
 ```
 Safety Check → SAFE
 → SNS (Log Mission Topic)
@@ -118,7 +118,7 @@ Safety Check → SAFE
 → END
 ```
 
-**Unsafe Path:**
+**❌ Unsafe Path:**
 ```
 Safety Check → UNSAFE
 → AWS Command Lambda (Update Device Shadow → VTOL receives abort command)
