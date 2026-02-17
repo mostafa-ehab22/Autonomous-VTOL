@@ -78,7 +78,7 @@ The cloud extension offloads cognitive and non-time-critical responsibilities to
 
 </div>
 
-> ⚠️ **Nothing safety-critical moves to the cloud.** All flight control, YOLO11 & failsafes remain fully onboard.
+> ⚠️ **Nothing safety-critical moves to the cloud.** All flight controls, perception & failsafes remain fully onboard.
 
 ## 🧱 AWS Cloud Architecture
 
