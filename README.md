@@ -119,6 +119,47 @@ Beyond a single aircraft, the architecture scales horizontally with **ZERO CHANG
 - **AWS X-Ray** → End-to-end distributed tracing
 - **IAM** → Least-privilege access control across all services
 
+## 💰 Cost & Scalability Analysis
+
+This entire cloud architecture is designed with a **"Pay-as-you-go" serverless model**. By utilizing event-driven triggers, no infrastructure runs 24/7 and no idle containers. When the fleet is grounded, 
+the cost is **$0.00**. 
+
+### 📉 Estimated Cost per Mission (1 Flight)
+The total cost for a single mission execution ($C_{total}$) is calculated by the sum of its serverless components:
+
+$$C_{total} = C_{IoT} + C_{Lambda} + C_{Bedrock} + C_{StepFunctions} + C_{SNS} + C_{DB}$$
+
+<div align="center">
+
+| Service | Estimated Usage (1 Mission) | Estimated Cost (USD) |
+|:---|:---:|:---:|
+| 📡 AWS IoT Core | 100 MQTT Messages + 2 Shadow Updates | ~$0.00012 |
+| 🧠 Amazon Bedrock | 300 Input + 100 Output Tokens (Nova Lite) | ~$0.000042 |
+| ⚙️ Step Functions | 12 State Transitions | ~$0.00030 |
+| ⚡ AWS Lambda | 4 Invocations (128MB, avg. 200ms) | ~$0.000016 |
+| 📨 SQS + SNS | < 1,000 requests | < $0.00001 |
+| **💰 Total** | **1 Complete Mission Cycle** | **~$0.00049** |
+
+</div>
+
+> 💡 **Conclusion:** Can run **2,000+ missions for $1.00 USD**, making this one of the most cost-efficient autonomous fleet architectures possible.
+
+### 🚀 Scaling to a Fleet (1,000+ VTOLs)
+Unlike monolithic designs, this architecture scales horizontally with **zero code changes**:
+
+- **⚡ Concurrency** → Lambda and Step Functions handle thousands of concurrent 
+  mission executions out of the box
+- **🛡️ Throttling Protection** → SQS acts as a buffer, ensuring the Cloud Extension is never overwhelmed by sudden telemetry spikes from the fleet.
+- **🌍 Regional Availability** → Stack is deployed via **AWS CDK**, allowing one-click replication across multiple AWS Regions (e.g., `us-east-1`, `eu-central-1`) to reduce latency for global operations.
+
+### 🛠️ Cost Optimization Strategies
+
+To maintain this efficiency, the following optimizations are implemented:
+
+1. 🧠 **Model Selection:** Using **Amazon Nova Lite** over Claude 3.5 Sonnet reduces inference cost by ~90% while maintaining sufficient reasoning for safety classification
+2. 📡 **Basic Ingest:** Telemetry that doesn't require the Message Broker is routed via **Basic Ingest** to eliminate 100% of the IoT Core messaging fee
+3. 🗑️ **Log Retention:** CloudWatch logs configured with a **7-day expiration** to prevent storage costs from accumulating over time
+
 ## 🔄 Mission Workflow Detail
 
 **✅ Safe Path:**
