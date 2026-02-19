@@ -124,14 +124,10 @@ Beyond a single aircraft, the architecture scales horizontally with **ZERO CHANG
 This entire cloud architecture is designed with a **"Pay-as-you-go" serverless model**. By utilizing event-driven triggers, no infrastructure runs 24/7 and no idle containers. When the fleet is grounded, 
 the cost is **$0.00**. 
 
-### 📉 Estimated Cost per Mission (1 Flight)
+### 📉 Estimated Cost per Flight
 The total cost for a single mission execution (**C<sub>total</sub>**) is the sum of its serverless components:
 
-
-  
 **C<sub>total</sub>** = **C<sub>IoT</sub>** + **C<sub>Lambda</sub>** + **C<sub>Bedrock</sub>** + **C<sub>StepFunctions</sub>** + **C<sub>SNS</sub>** + **C<sub>DB</sub>**
-
-
 
 <div align="center">
 
