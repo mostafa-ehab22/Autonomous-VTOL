@@ -230,7 +230,7 @@ cdk deploy
 - [x] ROS2 workspace setup with MAVLink bridge node
 - [x] SITL simulation validation
 - [x] Geofence and failsafe parameter tuning
-- [] Hardware integration on Pixhawk + Raspberry Pi
+- [ ] Hardware integration on Pixhawk + Raspberry Pi
 
 ### Cloud Extension
 - [ ] AWS CDK infrastructure stack
