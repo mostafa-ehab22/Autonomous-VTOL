@@ -147,7 +147,7 @@ $$C_{total} = C_{IoT} + C_{Lambda} + C_{Bedrock} + C_{StepFunctions} + C_{SNS} +
 ### 🚀 Scaling to a Fleet (1,000+ VTOLs)
 Unlike monolithic designs, this architecture scales horizontally with **zero code changes**:
 
-- **🧵 Concurrency** → Lambda and Step Functions handle thousands of concurrent 
+- **🧵 Concurrency** → Lambda & Step Functions handle thousands of concurrent 
   mission executions out of the box
 - **🛡️ Throttling Protection** → SQS acts as a buffer, ensuring the Cloud Extension is never overwhelmed by sudden telemetry spikes from the fleet.
 - **🌍 Regional Availability** → Stack is deployed via **AWS CDK**, allowing one-click replication across multiple AWS Regions (e.g., `us-east-1`, `eu-central-1`) to reduce latency for global operations.
