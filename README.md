@@ -24,7 +24,7 @@ A full-stack autonomous VTOL *(Vertical Take-Off and Landing)* aircraft system c
 </div>
 
 <div align="center">
-  <img src="docs/onboard_architecture.jpeg" alt="Onboard Architecture" width="90%"/>
+  <img src="docs/onboard_architecture.jpeg" alt="Onboard Architecture" width="99%"/>
 </div>
 
 ## 🧱 System Architecture
@@ -57,7 +57,7 @@ The onboard system is structured into three functional layers plus a dedicated v
 # 🌥️ Part 2: Cloud Extension Architecture
 
 <div align="center">
-  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="95%"/>
+  <img src="docs/cloud_architecture.png" alt="Cloud Architecture" width="99%"/>
 </div>
 
 </div>
