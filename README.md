@@ -29,7 +29,7 @@ A full-stack autonomous VTOL *(Vertical Take-Off and Landing)* aircraft system c
 
 ## 🧱 System Architecture
 
-The onboard system is structured into three distinct layers, each with a clear responsibility boundary:
+The onboard system is structured into three functional layers plus a dedicated validation layer, each with a clear and isolated responsibility boundary:
 ### 1️⃣ Perception Layer (AI & Vision)
 - **Roboflow** → Real-world annotated dataset for model training
 - **YOLO11** → Real-time object detection and classification
