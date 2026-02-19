@@ -127,7 +127,8 @@ the cost is **$0.00**.
 ### 📉 Estimated Cost per Flight
 The total cost for a single mission execution (**C<sub>total</sub>**) is the sum of its serverless components:
 
-**C<sub>total</sub>** = **C<sub>IoT</sub>** + **C<sub>Lambda</sub>** + **C<sub>Bedrock</sub>** + **C<sub>StepFunctions</sub>** + **C<sub>SNS</sub>** + **C<sub>DB</sub>**
+
+> **C<sub>total</sub>** = **C<sub>IoT</sub>** + **C<sub>Lambda</sub>** + **C<sub>Bedrock</sub>** + **C<sub>StepFunctions</sub>** + **C<sub>SNS</sub>** + **C<sub>DB</sub>**
 
 <div align="center">
 
@@ -142,7 +143,7 @@ The total cost for a single mission execution (**C<sub>total</sub>**) is the sum
 
 </div>
 
-> 💡 **Conclusion:** Can run **2,000+ missions for $1.00 USD**, making this one of the most cost-efficient autonomous fleet architectures possible.
+💡 **Conclusion:** Can run **2,000+ missions for $1.00 USD**, making this one of the most cost-efficient autonomous fleet architectures possible.
 
 ### 🚀 Scaling to a Fleet (1,000+ VTOLs)
 Unlike monolithic designs, this architecture scales horizontally with **zero code changes**:
