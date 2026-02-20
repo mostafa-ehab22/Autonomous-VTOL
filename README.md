@@ -143,7 +143,7 @@ The total cost for a single mission execution (**C<sub>total</sub>**) is the sum
 
 </div>
 
-💡 **Conclusion:** Can run **2,000+ missions for $1.00 USD**, making this one of the most cost-efficient autonomous fleet architectures possible.
+> 💡 **Conclusion:** Can run **2,000+ missions for $1.00 USD**, making this one of the most cost-efficient autonomous fleet architectures possible.
 
 ### 🚀 Scaling to a Fleet (1,000+ VTOLs)
 Unlike monolithic designs, this architecture scales horizontally with **zero code changes**:
